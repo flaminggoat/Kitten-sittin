@@ -48,7 +48,9 @@ public class Picker : MonoBehaviour
     //Upon collision with another GameObject, this GameObject will reverse direction
     private void OnTriggerEnter2D(Collider2D other)
     {
-        _inRangeToCarry = other.gameObject;
+        if (other.gameObject.GetComponent<IsPickable>() != null) {
+            _inRangeToCarry = other.gameObject;
+        }
     }
 
     //Upon collision with another GameObject, this GameObject will reverse direction
