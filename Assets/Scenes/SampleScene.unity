@@ -416,6 +416,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kittenPrefab: {fileID: 9106470262323687143, guid: 6ecb67aa4aff0894a8eb733de3d75088, type: 3}
   nKittens: 5
+  initialNKittens: 0
+  deadKittens: 0
+  gameOverScreen: {fileID: 1567029845}
   hp: 20
   reduceLifeRate: 0.5
   minSpawnIntervalSeconds: 5
@@ -534,6 +537,68 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1567029842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1567029844}
+  - component: {fileID: 1567029843}
+  - component: {fileID: 1567029845}
+  m_Layer: 5
+  m_Name: GameOver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1567029843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567029842}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: c92c80f76e7dcfa448ee9af8e9f1d264, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 5b398542163337d4597eaec0ae392673, type: 3}
+  m_SortingOrder: 100
+--- !u!4 &1567029844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567029842}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1567029845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567029842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c300f44b471bf31409657f0ce300c0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delaySeconds: 1
 --- !u!1 &1624401218
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +632,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: c92c80f76e7dcfa448ee9af8e9f1d264, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 8823067fb9645614db52cbf7062a558e, type: 3}
-  m_SortingOrder: 0
+  m_SortingOrder: 1
 --- !u!4 &1624401220
 Transform:
   m_ObjectHideFlags: 0
@@ -697,7 +762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5981717071419717503, guid: 67ff200a68f6cad4aa71729a651a0502, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5981717071419717503, guid: 67ff200a68f6cad4aa71729a651a0502, type: 3}
       propertyPath: m_LocalPosition.x
@@ -796,5 +861,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1176475952347813796, guid: a18eab5a29eb6e348ab1aa9046f21f84, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 1567029845}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a18eab5a29eb6e348ab1aa9046f21f84, type: 3}

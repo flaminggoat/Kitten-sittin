@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Drown : MonoBehaviour
 {
     float _scale = 1;
     bool _isDrowning = false;
-
+    public GameOver gameOverScreen;
     public bool isLeaping = false;
 
     // Start is called before the first frame update
@@ -37,6 +38,8 @@ public class Drown : MonoBehaviour
             var m = GetComponent<mother>();
             if (m != null) {
                 Destroy(GetComponent<mother>());
+
+                gameOverScreen.TriggerGameOver();
             }
 
             // Kill the kitten

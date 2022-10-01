@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class KittenManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class KittenManager : MonoBehaviour
     public uint initialNKittens;
     [HideInInspector]
     public uint deadKittens = 0;
+
+    public GameOver gameOverScreen;
 
     public float hp;
     private float _maxHp;
@@ -47,8 +50,8 @@ public class KittenManager : MonoBehaviour
             _secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
         }
 
-        if (hp <= 0) {
-            Debug.Log("Game Over!");
+        if (hp <= 0 || initialNKittens == deadKittens) {
+            gameOverScreen.TriggerGameOver();
         }
     }
 
