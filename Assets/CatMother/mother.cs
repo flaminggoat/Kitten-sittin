@@ -28,8 +28,8 @@ public class mother : MonoBehaviour
 
         if (Mathf.Abs(velocity.magnitude) > 0) {
             float angle = Mathf.Atan2(-velocity.x, velocity.y) * Mathf.Rad2Deg;
-            // Clamp angle to 90 degree steps
-            angle = to_multiple(angle, 90);
+            // Clamp angle to steps
+            angle = to_multiple(angle, 45/2);
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
 
