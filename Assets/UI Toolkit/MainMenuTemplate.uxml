@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/Style.uss?fileID=7433441132597879392&amp;guid=3d82eaa956d597a488ab025e7b40e295&amp;type=3#Style" />
     <ui:VisualElement name="Background" style="flex-grow: 1; align-items: center; justify-content: center;">
-        <ui:VisualElement style="height: 410px; width: 412px; background-color: rgba(255, 255, 255, 0.4); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; justify-content: center; align-items: center;">
+        <ui:VisualElement style="height: 410px; width: 412px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; justify-content: center; align-items: center;">
             <ui:Label text="Cat" display-tooltip-when-elided="true" style="font-size: 30px; padding-bottom: 10px; color: rgb(0, 0, 0);" />
             <ui:Button text="Start Game" display-tooltip-when-elided="true" name="start-button" class="buttonStyle" style="height: 58px; width: 330px;" />
             <ui:Button text="Options" display-tooltip-when-elided="true" name="options-button" class="buttonStyle" style="height: 58px; width: 330px;" />
