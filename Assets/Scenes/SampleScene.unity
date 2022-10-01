@@ -364,11 +364,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 863797254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b61d6aedeaf593147a4d632a0a8e0c85, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c39be65356814544827d8b92af93277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   kittenPrefab: {fileID: 9106470262323687143, guid: 6ecb67aa4aff0894a8eb733de3d75088, type: 3}
   nKittens: 5
+  life: 10
+  reduceLifeRate: 1
   minSpawnIntervalSeconds: 5
   maxSpawnIntervalSeconds: 10
 --- !u!212 &863797256
@@ -552,7 +554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1890434842}
   - component: {fileID: 1890434841}
-  - component: {fileID: 1890434840}
+  - component: {fileID: 1890434843}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -560,18 +562,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1890434840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890434839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1890434841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,6 +616,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1890434843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890434839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2106355241
 PrefabInstance:
   m_ObjectHideFlags: 0
