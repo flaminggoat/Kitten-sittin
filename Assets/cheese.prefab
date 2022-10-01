@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8829594579673040032}
   - component: {fileID: -8497927089702844563}
   - component: {fileID: 8829594579673040034}
+  - component: {fileID: 3737178037509969028}
   m_Layer: 0
   m_Name: cheese
   m_TagString: Untagged
@@ -123,3 +124,17 @@ CapsuleCollider2D:
   m_Offset: {x: -0.012690429, y: -0.021151097}
   m_Size: {x: 0.87309957, y: 0.45008916}
   m_Direction: 1
+--- !u!114 &3737178037509969028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829594579673040039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8676c3e631a787c4ea5e2cd81d483902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carryingAngle: 0
+  isCarried: 0
