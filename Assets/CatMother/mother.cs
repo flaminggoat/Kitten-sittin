@@ -9,6 +9,8 @@ public class mother : MonoBehaviour
     Vector3 _leap_vec;
     Animator _animator;
 
+    public float leapDuration = 0.7f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +23,9 @@ public class mother : MonoBehaviour
     }
 
     void do_leap(float delta) {
-        var leap_duration = 0.6f;
         var leap_speed = 2f;
         _leap_time += delta;
-        if (_leap_time > leap_duration / 2) {
+        if (_leap_time > leapDuration / 2) {
             transform.localScale -= Vector3.one * delta;
         } else {
             transform.localScale += Vector3.one * delta;
@@ -32,7 +33,7 @@ public class mother : MonoBehaviour
 
         transform.position += _leap_vec * leap_speed * Time.deltaTime;
         
-        if (_leap_time > leap_duration) {
+        if (_leap_time > leapDuration) {
             transform.localScale = Vector3.one * 1f;
             _is_leaping = false;
             GetComponent<Drown>().isLeaping = false;

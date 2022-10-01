@@ -451,6 +451,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: tilemap_16
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef286500c1de9e34fac0e9a5b27e1385
+      internalID: 749992658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap_17
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de7a15a2b0cf404fb8e58fbe3722316
+      internalID: 1109585241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap_18
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0685c8cb3378e46a56eb7fb834bdff
+      internalID: 1793437826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb52bec52697a6c4b8a9bcf746442680
+      internalID: -1119409798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -466,13 +550,17 @@ TextureImporter:
       tilemap_14: -336606925
       tilemap_15: 1999077601
       tilemap_7: 1239243623
+      tilemap_19: -1119409798
       tilemap_8: -1806980977
       tilemap_5: -636474154
       tilemap_2: -1897228836
       tilemap_3: 1891778138
       tilemap_12: 1693449546
+      tilemap_16: 749992658
       tilemap_10: 277125316
       tilemap_0: -183327711
+      tilemap_18: 1793437826
+      tilemap_17: 1109585241
       tilemap_6: 1963289753
       tilemap_9: -577464332
       tilemap_11: 453608776
