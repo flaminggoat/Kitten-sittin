@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="height: auto; flex-direction: row; width: 100%; position: relative; padding-top: 20px;">
+        <ui:VisualElement style="flex-grow: 1; flex-basis: auto; flex-shrink: 1; width: auto;" />
+        <ui:VisualElement style="flex-grow: 1; min-width: auto; min-height: auto;">
+            <ui:Label text="Health" display-tooltip-when-elided="true" style="height: auto; flex-grow: 1; flex-shrink: 1; margin-left: 10px;" />
+            <ui:ProgressBar title=" " name="hp-bar" tooltip="Health" high-value="20" class="hp-bar" style="flex-basis: auto; max-width: none; min-width: auto; width: auto; flex-grow: 1; flex-shrink: 1; max-height: 50px; margin-right: 15px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

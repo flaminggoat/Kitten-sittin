@@ -9,7 +9,8 @@ public class KittenManager : MonoBehaviour
     public uint nKittens;
     private uint _initialNKittens;
 
-    public float life;
+    public float hp;
+    private float _maxHp;
     public float reduceLifeRate;
 
     public float minSpawnIntervalSeconds;
@@ -22,12 +23,13 @@ public class KittenManager : MonoBehaviour
     {
         _secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
         _initialNKittens = nKittens;
+        _maxHp = hp;
     }
 
     // Update is called once per frame
     void Update()
     {
-        life -= Time.deltaTime * reduceLifeRate;
+        hp -= Time.deltaTime * reduceLifeRate;
         _secondsUntilNextKitten -= Time.deltaTime;
 
         if (_secondsUntilNextKitten <= 0 && nKittens > 0) {
@@ -41,7 +43,7 @@ public class KittenManager : MonoBehaviour
             _secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
         }
 
-        if (life <= 0) {
+        if (hp <= 0) {
             Debug.Log("Game Over!");
         }
     }
@@ -62,7 +64,12 @@ public class KittenManager : MonoBehaviour
 
         var f = go.GetComponent<Food>();
         if (f != null) {
-            life += f.lifeBoost;
+            hp += f.lifeBoost;
+
+            if (hp > _maxHp) {
+                hp = _maxHp;
+            }
+
             Destroy(go);
             return;
         }
