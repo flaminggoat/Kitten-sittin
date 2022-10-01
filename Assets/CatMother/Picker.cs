@@ -30,13 +30,13 @@ public class Picker : MonoBehaviour
         }
 
         if (carrying != null) {
-            AddToInRageIfTouching(carrying);
+            AddToInRangeIfTouching(carrying);
             carrying = null;
             return;
         }
     }
 
-    private void AddToInRageIfTouching(GameObject item) {
+    private void AddToInRangeIfTouching(GameObject item) {
         var c1 = GetComponent<Collider2D>();
         var c2 = item.GetComponent<Collider2D>();
 
