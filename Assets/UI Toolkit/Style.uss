@@ -1,0 +1,19 @@
+.buttonStyle {
+    margin-bottom: 4px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(195, 140, 40);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.buttonStyle:hover {
+    margin-bottom: 4px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(154, 109, 27);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
