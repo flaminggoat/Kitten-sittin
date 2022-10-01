@@ -5,6 +5,7 @@ using UnityEngine;
 public class mother : MonoBehaviour
 {
     Animator _animator;
+    public GameObject mouth;
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +36,13 @@ public class mother : MonoBehaviour
 
         _animator.speed = velocity.magnitude;
 
-        var newPosition = transform.position;
-        newPosition += velocity * Time.deltaTime;
+        transform.position += velocity * Time.deltaTime;
 
-        transform.position = newPosition;
+        var picker = GetComponent<Picker>();
+        if (picker.carrying != null) {
+            picker.carrying.transform.position = mouth.transform.position;
+            picker.carrying.transform.rotation = transform.rotation;
+        }
     }
 
 }
