@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class mother : MonoBehaviour
-{
+{   
+    bool _is_leaping = false;
+    float _leap_time;
     Animator _animator;
     public GameObject mouth;
 
@@ -16,6 +18,16 @@ public class mother : MonoBehaviour
     public static float to_multiple(float value, float multipleOf) 
     {
         return (float) Mathf.Round(value / multipleOf) * multipleOf;
+    }
+
+    void do_leap(float delta) {
+        var leap_duration = 1f;
+        _leap_time += delta;
+        if (_leap_time > leap_duration / 2) {
+            transform.localScale += Vector3.one * delta;
+        } else {
+            transform.localScale -= Vector3.one * delta;
+        }
     }
 
     // Update is called once per frame
@@ -36,7 +48,12 @@ public class mother : MonoBehaviour
 
         _animator.speed = velocity.magnitude;
 
-        transform.position += velocity * Time.deltaTime;
+        if (_is_leaping) {
+            do_leap(Time.deltaTime);
+        } else {
+            transform.position += velocity * Time.deltaTime;
+        }
+        
 
         var picker = GetComponent<Picker>();
         if (picker.carrying != null) {
