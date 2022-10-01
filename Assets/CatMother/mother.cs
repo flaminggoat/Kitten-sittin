@@ -4,26 +4,44 @@ using UnityEngine;
 
 public class mother : MonoBehaviour
 {
+    Animator _animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        _animator = GetComponent<Animator>();
+    }
+
+    public static float to_multiple(float value, float multipleOf) 
+    {
+        return (float) Mathf.Round(value / multipleOf) * multipleOf;
     }
 
         // Update is called once per frame
     void Update()
     {
-        var speed = 10;
+        var speed = 2;
         var velocity = new Vector3(0, 0, 0);
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            velocity.x -= speed;
+        velocity.x += Input.GetAxis("Horizontal") * speed;
+        velocity.y += Input.GetAxis("Vertical") * speed;
+
+        if (Mathf.Abs(velocity.magnitude) > 0) {
+            float angle = Mathf.Atan2(-velocity.x, velocity.y) * Mathf.Rad2Deg;
+            angle = to_multiple(angle, 90);
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            velocity.x += speed;
-        }
+
+        _animator.speed = velocity.magnitude;
+
+        // if (Input.GetKey(KeyCode.LeftArrow))
+        // {
+        //     velocity.x -= speed;
+        // }
+        // if (Input.GetKey(KeyCode.RightArrow))
+        // {
+        //     velocity.x += speed;
+        // }
 
         var newPosition = transform.position;
         newPosition += velocity * Time.deltaTime;
