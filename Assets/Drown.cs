@@ -33,7 +33,7 @@ public class Drown : MonoBehaviour
         {
             // Prevent any movement
             Destroy(GetComponent<mother>());
-
+            GetComponent<AudioSource>().Play();
             _is_drowning = true;
         }
     }
