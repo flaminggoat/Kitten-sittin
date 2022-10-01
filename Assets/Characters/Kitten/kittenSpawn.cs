@@ -26,7 +26,8 @@ public class kittenSpawn : MonoBehaviour
         if (secondsUntilNextKitten <= 0 && nKittens > 0) {
             nKittens--;
 
-            Instantiate(kitten, transform.position, new Quaternion(0,0,0,0));
+            var kittenInitialDirection = Random.Range(0, 360);
+            Instantiate(kitten, transform.position, Quaternion.Euler(new Vector3(0, 0, kittenInitialDirection)));
 
             secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
         }
