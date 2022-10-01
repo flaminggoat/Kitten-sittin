@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Style.uss?fileID=7433441132597879392&amp;guid=3d82eaa956d597a488ab025e7b40e295&amp;type=3#Style" />
+    <Style src="project://database/Assets/UI%20Toolkit/RadialProgress/RadialProgress.uss?fileID=7433441132597879392&amp;guid=7892f4883316b124587fe726f5d6a65f&amp;type=3#RadialProgress" />
+    <ui:VisualElement style="height: 100%; flex-direction: row; width: 100%; position: relative; background-color: rgba(89, 11, 11, 0.35);">
+        <ui:Label text="Game Over" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; flex-grow: 1; font-size: 80px; -unity-font: none; -unity-font-style: bold; color: rgb(255, 255, 255);" />
+    </ui:VisualElement>
+</ui:UXML>
