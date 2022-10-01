@@ -33,6 +33,7 @@ public class mother : MonoBehaviour
         transform.position += _leap_vec * leap_speed * Time.deltaTime;
         
         if (_leap_time > leap_duration) {
+            transform.localScale = Vector3.one * 1f;
             _is_leaping = false;
             GetComponent<Drown>().isLeaping = false;
             _animator.SetBool("leaping", false);
@@ -48,7 +49,7 @@ public class mother : MonoBehaviour
         velocity.x += Input.GetAxis("Horizontal") * speed;
         velocity.y += Input.GetAxis("Vertical") * speed;
 
-        if (Input.GetButtonDown("Leap")) {
+        if (Input.GetButtonDown("Leap") && !_is_leaping) {
             _is_leaping = true;
             _leap_time = 0f;
             _leap_vec = velocity;
