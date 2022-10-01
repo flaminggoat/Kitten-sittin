@@ -416,8 +416,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kittenPrefab: {fileID: 9106470262323687143, guid: 6ecb67aa4aff0894a8eb733de3d75088, type: 3}
   nKittens: 5
-  life: 10
-  reduceLifeRate: 1
+  hp: 20
+  reduceLifeRate: 0.5
   minSpawnIntervalSeconds: 5
   maxSpawnIntervalSeconds: 10
 --- !u!212 &863797256
@@ -601,6 +601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1624401220}
   - component: {fileID: 1624401219}
+  - component: {fileID: 1624401221}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -639,6 +640,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1624401221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624401218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01134cd3a444184d8da91863b36a3fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kittenManager: {fileID: 863797255}
 --- !u!1 &1890434839
 GameObject:
   m_ObjectHideFlags: 0
