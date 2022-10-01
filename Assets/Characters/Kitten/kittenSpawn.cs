@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class kittenSpawn : MonoBehaviour
 {
-    public GameObject kitten;
+    public GameObject kittenPrefab;
     public uint nKittens;
 
     public float minSpawnIntervalSeconds;
@@ -27,10 +28,24 @@ public class kittenSpawn : MonoBehaviour
             nKittens--;
 
             var kittenInitialDirection = Random.Range(0, 360);
-            Instantiate(kitten, transform.position, Quaternion.Euler(new Vector3(0, 0, kittenInitialDirection)));
+            Instantiate(kittenPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, kittenInitialDirection)));
 
             secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
         }
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        var go = other.gameObject;
+        var k = go.GetComponent<IsKitten>();
+        if (k != null) {
+            if (!k.born) {
+                k.born = true;
+                return;
+            }
+            Destroy(go);
+            nKittens++;
+        }
     }
 }
