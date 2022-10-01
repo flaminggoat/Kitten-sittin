@@ -11,26 +11,28 @@ public class kittenSpawn : MonoBehaviour
     public float minSpawnIntervalSeconds;
     public float maxSpawnIntervalSeconds;
 
-    private float secondsUntilNextKitten;
+    private float _secondsUntilNextKitten;
 
     // Start is called before the first frame update
     void Start()
     {
-        secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
+        _secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
     }
 
     // Update is called once per frame
     void Update()
     {
-        secondsUntilNextKitten -= Time.deltaTime;
+        _secondsUntilNextKitten -= Time.deltaTime;
 
-        if (secondsUntilNextKitten <= 0 && nKittens > 0) {
+        if (_secondsUntilNextKitten <= 0 && nKittens > 0) {
             nKittens--;
 
             var kittenInitialDirection = Random.Range(0, 360);
-            Instantiate(kittenPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, kittenInitialDirection)));
+            var kitten = Instantiate(kittenPrefab, transform.position, new Quaternion(0,0,0,0));
+            var k = kitten.GetComponent<Kitten>();
+            k.speedDirectionDegrees = kittenInitialDirection;
 
-            secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
+            _secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
         }
         
     }
@@ -38,10 +40,10 @@ public class kittenSpawn : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         var go = other.gameObject;
-        var k = go.GetComponent<IsKitten>();
+        var k = go.GetComponent<Kitten>();
         if (k != null) {
-            if (!k.born) {
-                k.born = true;
+            if (!k.isBorn) {
+                k.isBorn = true;
                 return;
             }
             Destroy(go);
