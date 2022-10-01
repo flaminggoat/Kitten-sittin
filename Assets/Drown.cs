@@ -29,7 +29,7 @@ public class Drown : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (true)
+        if (other.GetComponent<IsWater>() != null)
         {
             // Prevent any movement
             Destroy(GetComponent<mother>());
