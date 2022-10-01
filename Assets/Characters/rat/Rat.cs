@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Rat : MonoBehaviour
 {
-    [HideInInspector]
-    public bool isBorn = false;
     public float speed;
 
     [Range(0.0f, 360.0f)]
