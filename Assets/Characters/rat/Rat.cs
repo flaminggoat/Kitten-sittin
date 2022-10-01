@@ -38,8 +38,8 @@ public class Rat : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.GetComponent<IsWater>() != null)
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.GetComponent<IsWater>() != null)
         {
             // Turn around
             speedDirectionDegrees += 180;
