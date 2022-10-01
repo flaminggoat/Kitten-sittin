@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61d6aedeaf593147a4d632a0a8e0c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kitten: {fileID: 1309583781}
+  kitten: {fileID: 9106470262323687143, guid: 6ecb67aa4aff0894a8eb733de3d75088, type: 3}
   nKittens: 5
   minSpawnIntervalSeconds: 2
   maxSpawnIntervalSeconds: 5
