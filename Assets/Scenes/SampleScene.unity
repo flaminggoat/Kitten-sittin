@@ -687,6 +687,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1868552111672461669, guid: 67ff200a68f6cad4aa71729a651a0502, type: 3}
+      propertyPath: m_GeometryType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5981717071419717501, guid: 67ff200a68f6cad4aa71729a651a0502, type: 3}
       propertyPath: m_Name
       value: Ground 1
