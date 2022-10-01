@@ -7,7 +7,10 @@ public class KittenManager : MonoBehaviour
 {
     public GameObject kittenPrefab;
     public uint nKittens;
-    private uint _initialNKittens;
+    [HideInInspector]
+    public uint initialNKittens;
+    [HideInInspector]
+    public uint deadKittens = 0;
 
     public float hp;
     private float _maxHp;
@@ -22,7 +25,7 @@ public class KittenManager : MonoBehaviour
     void Start()
     {
         _secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
-        _initialNKittens = nKittens;
+        initialNKittens = nKittens;
         _maxHp = hp;
     }
 
@@ -39,6 +42,7 @@ public class KittenManager : MonoBehaviour
             var kitten = Instantiate(kittenPrefab, transform.position, new Quaternion(0,0,0,0));
             var k = kitten.GetComponent<Kitten>();
             k.speedDirectionDegrees = kittenInitialDirection;
+            k.manager = this;
 
             _secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
         }
@@ -48,7 +52,7 @@ public class KittenManager : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         var go = other.gameObject;
         var k = go.GetComponent<Kitten>();
