@@ -5,7 +5,9 @@ using UnityEngine;
 public class Drown : MonoBehaviour
 {
     float _scale = 1;
-    bool _is_drowning = false;
+    bool _isDrowning = false;
+
+    public bool isLeaping = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +18,7 @@ public class Drown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_is_drowning)
+        if (_isDrowning)
         {
             if (_scale <= 0) {
                 Destroy(gameObject);
@@ -28,13 +30,13 @@ public class Drown : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.GetComponent<IsWater>() != null)
+    private void OnTriggerStay2D(Collider2D other) {
+        if (other.GetComponent<IsWater>() != null && !isLeaping && !_isDrowning)
         {
             // Prevent any movement
             Destroy(GetComponent<mother>());
             GetComponent<AudioSource>().Play();
-            _is_drowning = true;
+            _isDrowning = true;
         }
     }
 
