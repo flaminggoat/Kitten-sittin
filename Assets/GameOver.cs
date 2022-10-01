@@ -24,18 +24,12 @@ public class GameOver : MonoBehaviour
         }
 
         if (delaySeconds<0) {
-            ShowGameOver();
+            Time.timeScale = 0;
         }
     }
 
     public void TriggerGameOver() {
-        _isGameOver = true;
-    }
-
-
-    private void ShowGameOver() {
         _screen.enabled = true;
-
-        Time.timeScale = 0;
+        _isGameOver = true;
     }
 }
