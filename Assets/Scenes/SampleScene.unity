@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cheesePrefab: {fileID: 8829594579673040039, guid: 69b0c75aa03ca0846825a72c74c24a14, type: 3}
+  ratPrefab: {fileID: 7612214193882581826, guid: 7f59752880f038e409c6811753554c81, type: 3}
   spawnInterval: 5
   spawnRadius: 10
 --- !u!4 &37215178
@@ -416,6 +417,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kittenPrefab: {fileID: 9106470262323687143, guid: 6ecb67aa4aff0894a8eb733de3d75088, type: 3}
   nKittens: 5
+  initialNKittens: 0
+  deadKittens: 0
   hp: 20
   reduceLifeRate: 0.5
   minSpawnIntervalSeconds: 5
@@ -794,6 +797,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1176475952347813791, guid: a18eab5a29eb6e348ab1aa9046f21f84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254308873251375582, guid: a18eab5a29eb6e348ab1aa9046f21f84, type: 3}
+      propertyPath: BypassListenerEffects
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

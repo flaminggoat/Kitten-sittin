@@ -46,8 +46,10 @@ public class Drown : MonoBehaviour
             }
 
             var a = GetComponent<AudioSource>();
-            if (m != null) {
+            if (a != null) {
                 a.Play();
+            } else {
+                Debug.Log("No audio source to play");
             }
             _isDrowning = true;
         }

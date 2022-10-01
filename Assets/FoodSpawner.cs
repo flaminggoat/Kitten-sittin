@@ -5,10 +5,11 @@ using UnityEngine;
 public class FoodSpawner : MonoBehaviour
 {
     public GameObject cheesePrefab;
+    public GameObject ratPrefab;
     public float spawnInterval = 10;
     public float spawnRadius = 20f;
 
-    float _secondsUntilNextKitten = 0;
+    float _secondsUntilNextFood = 0;
     CompositeCollider2D _waterCollider;
 
     // Start is called before the first frame update
@@ -23,17 +24,27 @@ public class FoodSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _secondsUntilNextKitten -= Time.deltaTime;
+        _secondsUntilNextFood -= Time.deltaTime;
 
-        if (_secondsUntilNextKitten < 0) {
+        if (_secondsUntilNextFood < 0) {
             Vector3 pos;
             do {
-                pos = new Vector3(Random.Range(-spawnRadius,spawnRadius),Random.Range(-spawnRadius,spawnRadius),Random.Range(-spawnRadius,spawnRadius));
+                pos = new Vector3(Random.Range(-spawnRadius,spawnRadius),Random.Range(-spawnRadius,spawnRadius),0);
                 // retry until a point is found that is not in water
             }while(_waterCollider.OverlapPoint(new Vector2(pos.x, pos.y)) && _waterCollider != null);
             
-            var kitten = Instantiate(cheesePrefab, pos, new Quaternion(0,0,0,0));
-            _secondsUntilNextKitten = spawnInterval;
+            switch (Random.Range(0,2)) {
+                case 0:
+                    Instantiate(cheesePrefab, pos, new Quaternion(0,0,0,0));
+                    break;
+                case 1:
+                    var r = Instantiate(ratPrefab, pos, new Quaternion(0,0,0,0));
+                    var rat = r.GetComponent<Rat>();
+                    rat.speedDirectionDegrees = Random.Range(0,360f);
+                    break;
+            }
+            
+            _secondsUntilNextFood = spawnInterval;
         }
         
     }
