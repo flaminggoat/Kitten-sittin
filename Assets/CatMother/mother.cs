@@ -17,7 +17,7 @@ public class mother : MonoBehaviour
         return (float) Mathf.Round(value / multipleOf) * multipleOf;
     }
 
-        // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         var speed = 2;
@@ -28,20 +28,12 @@ public class mother : MonoBehaviour
 
         if (Mathf.Abs(velocity.magnitude) > 0) {
             float angle = Mathf.Atan2(-velocity.x, velocity.y) * Mathf.Rad2Deg;
+            // Clamp angle to 90 degree steps
             angle = to_multiple(angle, 90);
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
 
         _animator.speed = velocity.magnitude;
-
-        // if (Input.GetKey(KeyCode.LeftArrow))
-        // {
-        //     velocity.x -= speed;
-        // }
-        // if (Input.GetKey(KeyCode.RightArrow))
-        // {
-        //     velocity.x += speed;
-        // }
 
         var newPosition = transform.position;
         newPosition += velocity * Time.deltaTime;
