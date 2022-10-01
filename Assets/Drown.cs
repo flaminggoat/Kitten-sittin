@@ -30,12 +30,25 @@ public class Drown : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other) {
-        if (other.GetComponent<IsWater>() != null && !isLeaping && !_isDrowning)
+    private void OnCollisionStay2D(Collision2D other) {
+        if (other.gameObject.GetComponent<IsWater>() != null && !isLeaping && !_isDrowning)
         {
             // Prevent any movement
-            Destroy(GetComponent<mother>());
-            GetComponent<AudioSource>().Play();
+            var m = GetComponent<mother>();
+            if (m != null) {
+                Destroy(GetComponent<mother>());
+            }
+
+            // Kill the kitten
+            var k = GetComponent<Kitten>();
+            if (k != null) {
+                k.manager.deadKittens++;
+            }
+
+            var a = GetComponent<AudioSource>();
+            if (m != null) {
+                a.Play();
+            }
             _isDrowning = true;
         }
     }

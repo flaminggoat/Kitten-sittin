@@ -11,6 +11,9 @@ public class Kitten : MonoBehaviour
     [Range(0.0f, 360.0f)]
     public float speedDirectionDegrees;
 
+    [HideInInspector]
+    public KittenManager manager;
+
     private Vector3 _forward = new Vector3(0,1,0);
 
     // Start is called before the first frame update
