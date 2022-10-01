@@ -5,7 +5,6 @@ using UnityEngine;
 public class mother : MonoBehaviour
 {
     Animator _animator;
-    public GameObject mouth;
 
     // Start is called before the first frame update
     void Start()
@@ -30,19 +29,13 @@ public class mother : MonoBehaviour
         if (Mathf.Abs(velocity.magnitude) > 0) {
             float angle = Mathf.Atan2(-velocity.x, velocity.y) * Mathf.Rad2Deg;
             // Clamp angle to steps
-            angle = to_multiple(angle, 45/2);
+            angle = to_multiple(angle, 45);
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
 
         _animator.speed = velocity.magnitude;
 
         transform.position += velocity * Time.deltaTime;
-
-        var picker = GetComponent<Picker>();
-        if (picker.carrying != null) {
-            picker.carrying.transform.position = mouth.transform.position;
-            picker.carrying.transform.rotation = transform.rotation;
-        }
     }
 
 }
