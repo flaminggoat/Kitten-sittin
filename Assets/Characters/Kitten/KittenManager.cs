@@ -39,6 +39,7 @@ public class KittenManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Starting KittenManager setup");
         _secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
         initialNKittens = nKittens;
         _maxHp = hp;
