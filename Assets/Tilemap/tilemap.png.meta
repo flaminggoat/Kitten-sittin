@@ -535,6 +535,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: tilemap_20
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09704e86469abd94f90c078356096d60
+      internalID: 523150874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -549,6 +570,7 @@ TextureImporter:
       tilemap_13: 16553750
       tilemap_14: -336606925
       tilemap_15: 1999077601
+      tilemap_20: 523150874
       tilemap_7: 1239243623
       tilemap_19: -1119409798
       tilemap_8: -1806980977

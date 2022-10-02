@@ -11,15 +11,19 @@ public class Kitten : MonoBehaviour
     [Range(0.0f, 360.0f)]
     public float speedDirectionDegrees;
 
+    public AudioClip spawnSound;
+
     [HideInInspector]
     public KittenManager manager;
 
     private Vector3 _forward = new Vector3(0,1,0);
 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        var audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(spawnSound);
     }
 
     // Update is called once per frame

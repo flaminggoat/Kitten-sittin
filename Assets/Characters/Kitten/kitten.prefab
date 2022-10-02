@@ -105,6 +105,7 @@ MonoBehaviour:
   isBorn: 0
   speed: 0.5
   speedDirectionDegrees: 0
+  spawnSound: {fileID: 8300000, guid: 1a5d39a866a23594294c0364859f168a, type: 3}
   manager: {fileID: 0}
 --- !u!82 &5579695153686974341
 AudioSource:
@@ -265,4 +266,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b758f8427483e44b7ff93ea36ebfea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverScreen: {fileID: 0}
   isLeaping: 0
