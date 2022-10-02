@@ -7,14 +7,14 @@ public class mother : MonoBehaviour
     bool _is_leaping = false;
     float _leap_time;
     Vector3 _leap_vec;
-    Animator _animator;
+    Animator[] _animators;
 
     public float leapDuration = 0.7f;
 
     // Start is called before the first frame update
     void Start()
     {
-        _animator = GetComponent<Animator>();
+        _animators = GetComponentsInChildren<Animator>();
     }
 
     public static float to_multiple(float value, float multipleOf) 
@@ -37,7 +37,10 @@ public class mother : MonoBehaviour
             transform.localScale = Vector3.one * 1f;
             _is_leaping = false;
             GetComponent<Drown>().isLeaping = false;
-            _animator.SetBool("leaping", false);
+
+            foreach(Animator a in _animators) {
+                a.SetBool("leaping", false);
+            }
         }
     }
 
@@ -55,7 +58,10 @@ public class mother : MonoBehaviour
             _leap_time = 0f;
             _leap_vec = velocity;
             GetComponent<Drown>().isLeaping = true;
-            _animator.SetBool("leaping", true);
+
+            foreach(Animator a in _animators) {
+                a.SetBool("leaping", true);
+            }
         }
 
         if (_is_leaping) {
@@ -67,7 +73,9 @@ public class mother : MonoBehaviour
                 angle = to_multiple(angle, 45);
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             }
-            _animator.speed = velocity.magnitude;
+            foreach(Animator a in _animators) {
+                a.SetFloat("walk_speed", velocity.magnitude);
+            }
             transform.position += velocity * Time.deltaTime;
         }
         
