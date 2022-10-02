@@ -19,10 +19,19 @@
 }
 
 .hp-bar .unity-progress-bar__progress {
-    background-color: #ff0000;
+    background-color: rgb(255, 0, 0);
 }
 
 .hp-bar .unity-progress-bar__background {
-    background-color: rgba(255,255,255, 0.5);
-    border-width: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-width: 0;
+}
+
+.age-bar .unity-progress-bar__progress {
+    background-color: rgb(32, 255, 0);
+}
+
+.age-bar .unity-progress-bar__background {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-width: 0;
 }

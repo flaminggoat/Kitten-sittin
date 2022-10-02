@@ -7,9 +7,11 @@ public class FoodSpawner : MonoBehaviour
     public GameObject cheesePrefab;
     public GameObject ratPrefab;
     public float spawnInterval = 10;
-    public float spawnRadius = 20f;
+    public float minSpawnRadius = 5f;
+    public float maxSpawnRadius = 20f;
 
     float _secondsUntilNextFood = 0;
+    float _difficulty = 0;
     CompositeCollider2D _waterCollider;
 
     // Start is called before the first frame update
@@ -24,12 +26,16 @@ public class FoodSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _difficulty += Time.deltaTime;
         _secondsUntilNextFood -= Time.deltaTime;
 
         if (_secondsUntilNextFood < 0) {
             Vector3 pos;
             do {
-                pos = new Vector3(Random.Range(-spawnRadius,spawnRadius),Random.Range(-spawnRadius,spawnRadius),0);
+                pos = new Vector3(
+                    Random.Range(-minSpawnRadius-_difficulty,maxSpawnRadius+_difficulty),
+                    Random.Range(-minSpawnRadius-_difficulty,maxSpawnRadius+_difficulty),
+                    0);
                 // retry until a point is found that is not in water
             }while(_waterCollider.OverlapPoint(new Vector2(pos.x, pos.y)) && _waterCollider != null);
             

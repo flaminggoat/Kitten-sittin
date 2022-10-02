@@ -14,6 +14,7 @@ public class KittenManager : MonoBehaviour
     public uint deadKittens = 0;
 
     public GameOver gameOverScreen;
+    public float kittenAge = 0;
     public float hp;
     private float _maxHp;
     public float reduceLifeRate;
@@ -48,6 +49,7 @@ public class KittenManager : MonoBehaviour
     {
         hp -= Time.deltaTime * reduceLifeRate;
         _secondsUntilNextKitten -= Time.deltaTime;
+        kittenAge += Time.deltaTime;
 
         if (_secondsUntilNextKitten <= 0 && nKittens > 0) {
             nKittens--;
@@ -67,6 +69,8 @@ public class KittenManager : MonoBehaviour
         } else if (initialNKittens == deadKittens) {
             var sentenceIndex =  Random.Range(0, _diedSentences.Count);
             gameOverScreen.TriggerGameOver(_diedSentences[sentenceIndex]);
+        } else if ( kittenAge > 100) {
+            gameOverScreen.TriggerGameSuccess(initialNKittens - deadKittens);
         }
     }
 

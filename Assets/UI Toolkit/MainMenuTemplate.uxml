@@ -2,9 +2,11 @@
     <Style src="project://database/Assets/UI%20Toolkit/Style.uss?fileID=7433441132597879392&amp;guid=3d82eaa956d597a488ab025e7b40e295&amp;type=3#Style" />
     <ui:VisualElement name="Background" style="flex-grow: 1; align-items: center; justify-content: center;">
         <ui:VisualElement style="height: 410px; width: 412px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; justify-content: center; align-items: center;">
-            <ui:Label text="Cat" display-tooltip-when-elided="true" style="font-size: 30px; padding-bottom: 10px; color: rgb(0, 0, 0);" />
+            <ui:Label text="Kitten Sittin&apos;" display-tooltip-when-elided="true" style="font-size: 30px; padding-bottom: 10px; color: rgb(0, 0, 0);" />
             <ui:Button text="Start Game" display-tooltip-when-elided="true" name="start-button" class="buttonStyle" style="height: 58px; width: 330px;" />
-            <ui:Button text="Options" display-tooltip-when-elided="true" name="options-button" class="buttonStyle" style="height: 58px; width: 330px;" />
+            <ui:Label text="Keep your kittens safe and fed until they grow up!" display-tooltip-when-elided="true" style="height: 49px; width: 287px; padding-top: 10px; color: rgb(0, 0, 0); -unity-text-align: upper-center;" />
+            <ui:Label text="Press space to grab" display-tooltip-when-elided="true" style="color: rgb(0, 0, 0); -unity-text-align: upper-center;" />
+            <ui:Label text="Press shift to leap" display-tooltip-when-elided="true" style="color: rgb(0, 0, 0); -unity-text-align: upper-center;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

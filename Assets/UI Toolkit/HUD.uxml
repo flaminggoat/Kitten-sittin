@@ -4,8 +4,18 @@
     <ui:VisualElement style="height: auto; flex-direction: row; width: 100%; position: relative; padding-top: 20px;">
         <ui:VisualElement style="flex-grow: 2; flex-basis: auto; flex-shrink: 1; width: auto;" />
         <ui:VisualElement style="align-items: stretch; flex-grow: 1; padding-right: 15px;">
-            <ui:ProgressBar title=" " name="hp-bar" tooltip="Health" high-value="20" class="hp-bar" style="flex-basis: auto; max-width: none; min-width: auto; width: auto; flex-grow: 1; flex-shrink: 1; max-height: 50px; margin-right: 0; background-color: rgba(173, 107, 107, 0.54); scale: -1 1; padding-bottom: 0; margin-left: 0; margin-top: 0; margin-bottom: 0;" />
-            <MyUILibrary.RadialProgress name="kitten-counter" max="5" value="1" focusable="false" style="flex-shrink: 0; width: 100px; height: 100px; flex-direction: row; align-self: flex-end;" />
+            <ui:GroupBox style="flex-direction: row;">
+                <ui:Label text="Age" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; height: 20px; width: 98px;" />
+                <ui:ProgressBar title=" " name="age-bar" tooltip="Health" high-value="100" class="age-bar" style="flex-basis: auto; max-width: none; min-width: auto; width: auto; flex-grow: 1; flex-shrink: 1; max-height: 50px; margin-right: 0; background-color: rgba(109, 173, 107, 0.54); scale: -1 1; padding-bottom: 0; margin-left: 0; margin-top: 0; margin-bottom: 0;" />
+            </ui:GroupBox>
+            <ui:GroupBox style="flex-direction: row;">
+                <ui:Label text="Food" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; height: 20px; width: 98px;" />
+                <ui:ProgressBar title=" " name="hp-bar" tooltip="Health" high-value="20" class="hp-bar" style="flex-basis: auto; max-width: none; min-width: auto; width: auto; flex-grow: 1; flex-shrink: 1; max-height: 50px; margin-right: 0; background-color: rgba(173, 107, 107, 0.54); scale: -1 1; padding-bottom: 0; margin-left: 0; margin-top: 0; margin-bottom: 0;" />
+            </ui:GroupBox>
+            <ui:GroupBox style="flex-direction: row-reverse;">
+                <MyUILibrary.RadialProgress name="kitten-counter" max="5" value="1" focusable="false" style="flex-shrink: 0; width: 100px; height: 100px; flex-direction: row; align-self: flex-end; padding-top: 0; margin-top: 10px;" />
+                <ui:Label text="Kittens" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; height: 117px; width: 81px;" />
+            </ui:GroupBox>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
