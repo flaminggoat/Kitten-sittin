@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a89404e042cacb4e84e5c0162974ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBorn: 0
   speed: 1
   speedDirectionDegrees: 0
   changeDirTime: 2
@@ -117,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8676c3e631a787c4ea5e2cd81d483902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carryingAngle: 0
+  carryingAngle: 90
   isCarried: 0
 --- !u!114 &6293055835427396035
 MonoBehaviour:
