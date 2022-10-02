@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class KittenManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class KittenManager : MonoBehaviour
     [HideInInspector]
     public uint deadKittens = 0;
 
+    public GameOver gameOverScreen;
+
     public float hp;
     private float _maxHp;
     public float reduceLifeRate;
@@ -20,6 +23,18 @@ public class KittenManager : MonoBehaviour
     public float maxSpawnIntervalSeconds;
 
     private float _secondsUntilNextKitten;
+
+    private List<string> _hungrySentences = new List<string>()
+    {
+        "You couldn't keep your kittens fed! :(",
+        "Your kittens needed food...",
+    };
+
+    private List<string> _diedSentences = new List<string>()
+    {
+        "Your kittens walked into the world before they were ready :(",
+        "You have no kittens left alive :(",
+    };
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +63,11 @@ public class KittenManager : MonoBehaviour
         }
 
         if (hp <= 0) {
-            Debug.Log("Game Over!");
+            var sentenceIndex =  Random.Range(0, _hungrySentences.Count);
+            gameOverScreen.TriggerGameOver(_hungrySentences[sentenceIndex]);
+        } else if (initialNKittens == deadKittens) {
+            var sentenceIndex =  Random.Range(0, _diedSentences.Count);
+            gameOverScreen.TriggerGameOver(_diedSentences[sentenceIndex]);
         }
     }
 
