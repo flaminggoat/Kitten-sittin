@@ -5,6 +5,10 @@
         <ui:VisualElement style="flex-grow: 2; flex-basis: auto; flex-shrink: 1; width: auto;" />
         <ui:VisualElement style="align-items: stretch; flex-grow: 1; padding-right: 15px;">
             <ui:GroupBox style="flex-direction: row;">
+                <ui:Label text="Age" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; height: 20px; width: 98px;" />
+                <ui:ProgressBar title=" " name="age-bar" tooltip="Health" high-value="100" class="age-bar" style="flex-basis: auto; max-width: none; min-width: auto; width: auto; flex-grow: 1; flex-shrink: 1; max-height: 50px; margin-right: 0; background-color: rgba(109, 173, 107, 0.54); scale: -1 1; padding-bottom: 0; margin-left: 0; margin-top: 0; margin-bottom: 0;" />
+            </ui:GroupBox>
+            <ui:GroupBox style="flex-direction: row;">
                 <ui:Label text="Food" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; height: 20px; width: 98px;" />
                 <ui:ProgressBar title=" " name="hp-bar" tooltip="Health" high-value="20" class="hp-bar" style="flex-basis: auto; max-width: none; min-width: auto; width: auto; flex-grow: 1; flex-shrink: 1; max-height: 50px; margin-right: 0; background-color: rgba(173, 107, 107, 0.54); scale: -1 1; padding-bottom: 0; margin-left: 0; margin-top: 0; margin-bottom: 0;" />
             </ui:GroupBox>

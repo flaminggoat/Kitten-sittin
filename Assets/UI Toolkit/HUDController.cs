@@ -8,6 +8,7 @@ public class HUDController : MonoBehaviour
 {
     public KittenManager kittenManager;
     private ProgressBar _hpBar;
+    private ProgressBar _ageBar;
     private RadialProgress _kittenCounter;
 
     // Start is called before the first frame update
@@ -15,6 +16,7 @@ public class HUDController : MonoBehaviour
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
         _hpBar = root.Q<ProgressBar>("hp-bar");
+        _ageBar = root.Q<ProgressBar>("age-bar");
         _kittenCounter = root.Q<RadialProgress>("kitten-counter");
     }
 
@@ -23,5 +25,6 @@ public class HUDController : MonoBehaviour
     {
         _hpBar.value = kittenManager.hp;
         _kittenCounter.value = kittenManager.initialNKittens - kittenManager.deadKittens;
+        _ageBar.value = kittenManager.kittenAge;
     }
 }

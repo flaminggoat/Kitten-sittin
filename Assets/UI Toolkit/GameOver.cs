@@ -42,6 +42,12 @@ public class GameOver : MonoBehaviour
         _restartBtn.Blur();
     }
 
+    public void TriggerGameSuccess(uint kittens) {
+        _screen.rootVisualElement.Q<VisualElement>("bg").style.backgroundColor = new StyleColor(new Color(0,0.5f,0,0.4f));
+        _screen.rootVisualElement.Q<Label>("result").text = "Congratulations!";
+        TriggerGameOver("You nurtured " + kittens.ToString() + " kittens to adulthood.");
+    }
+ 
     public void TriggerGameOver(string reason) {
         if (!_isGameOver) {
             var label = _screen.rootVisualElement.Q<Label>("game-over-reason");
