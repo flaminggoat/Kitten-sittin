@@ -9,6 +9,7 @@ public class GameOver : MonoBehaviour
     public float delaySeconds;
     private UIDocument _screen;
     private bool _isGameOver = false;
+    private bool _hasTimeBeenStopped = false;
     private Button _restartBtn;
 
     // Start is called before the first frame update
@@ -35,8 +36,9 @@ public class GameOver : MonoBehaviour
             delaySeconds -= Time.deltaTime;
         }
 
-        if (delaySeconds<0) {
+        if (delaySeconds<0 && !_hasTimeBeenStopped) {
             Time.timeScale = 0;
+            _hasTimeBeenStopped = true;
         }
     }
 

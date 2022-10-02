@@ -9,6 +9,8 @@ public class KittenManager : MonoBehaviour
     public GameObject kittenPrefab;
     public uint nKittens;
     [HideInInspector]
+    public uint nKittensNotVisible;
+    [HideInInspector]
     public uint initialNKittens;
     [HideInInspector]
     public uint deadKittens = 0;
@@ -42,6 +44,7 @@ public class KittenManager : MonoBehaviour
         Debug.Log("Starting KittenManager setup");
         _secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
         initialNKittens = nKittens;
+        nKittensNotVisible = nKittens;
         _maxHp = hp;
     }
 
@@ -75,17 +78,31 @@ public class KittenManager : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionExit2D(Collision2D other)
     {
         var go = other.gameObject;
         var k = go.GetComponent<Kitten>();
         if (k != null) {
             if (!k.isBorn) {
                 k.isBorn = true;
+            } else {
+                return;
+            }
+            nKittensNotVisible--;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        var go = other.gameObject;
+        var k = go.GetComponent<Kitten>();
+        if (k != null) {
+            if (!k.isBorn) {
                 return;
             }
             Destroy(go);
             nKittens++;
+            nKittensNotVisible++;
             return;
         }
 
