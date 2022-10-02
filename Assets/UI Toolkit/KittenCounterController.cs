@@ -19,6 +19,6 @@ public class KittenCounterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _text.text = kittenManager.nKittens.ToString();
+        _text.text = kittenManager.nKittensNotVisible.ToString();
     }
 }
