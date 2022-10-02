@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.U2D.Path;
@@ -13,6 +14,7 @@ public class DayNight : MonoBehaviour
     public float dayCycle = 0;
     public float dayDurationSeconds = 10; 
     public Light2D[] nightLights;
+    private float[] _nightLightsMaxIntensities;
     private Light2D sunLight;
 
 
@@ -24,6 +26,12 @@ public class DayNight : MonoBehaviour
     void Start()
     {
         sunLight = GetComponent<Light2D>();
+
+        Array.Resize(ref _nightLightsMaxIntensities, nightLights.Length);
+
+        for (int i = 0 ; i < nightLights.Length ; i++) {
+            _nightLightsMaxIntensities[i] = nightLights[i].intensity;
+        }
     }
 
     // Update is called once per frame
@@ -42,8 +50,11 @@ public class DayNight : MonoBehaviour
         var clamped = Mathf.Clamp(sunLight.intensity, 0, 1); 
         sunLight.color = dayLightColor.Evaluate(clamped);
 
-        foreach(Light2D light in nightLights) {
-            light.intensity = 1-clamped;
+        for (int i = 0 ; i < nightLights.Length ; i++) {
+            var light = nightLights[i];
+            var maxIntensity = _nightLightsMaxIntensities[i];
+
+            light.intensity = (1-clamped) * maxIntensity;
         }
     }
 }
