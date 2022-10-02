@@ -27,6 +27,12 @@ public class GameOver : MonoBehaviour
         } else {
             _restartBtn.clicked += RestartButtonPressed;
         }
+
+        var mainMenuButton = _screen.rootVisualElement.Q<Button>("main-menu-btn");
+        if (mainMenuButton != null){
+            mainMenuButton.clicked += MenuButtonPressed;
+            mainMenuButton.clicked += mainMenuButton.Blur;
+        }
     }
 
     // Update is called once per frame
@@ -40,6 +46,11 @@ public class GameOver : MonoBehaviour
             Time.timeScale = 0;
             _hasTimeBeenStopped = true;
         }
+    }
+
+    void MenuButtonPressed() {
+        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1;
     }
 
     void RestartButtonPressed() {
