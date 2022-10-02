@@ -19,8 +19,7 @@ public class GameOver : MonoBehaviour
         if (_screen == null) {
             Debug.Log("UIDocument component not found");
         }
-        _screen.enabled = false;
-        
+        _screen.rootVisualElement.visible = false;
         _restartBtn = _screen.rootVisualElement.Q<Button>("restart-btn");
         if (_restartBtn == null) {
             Debug.Log("restart-btn component not found");
@@ -43,6 +42,7 @@ public class GameOver : MonoBehaviour
 
     void RestartButtonPressed() {
         Debug.Log("Press restart button");
+        _screen.rootVisualElement.visible = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
 
@@ -63,7 +63,8 @@ public class GameOver : MonoBehaviour
                 label.text = reason;
             }
 
-            _screen.enabled = true;
+            _screen.sortingOrder = 100;
+            _screen.rootVisualElement.visible = true;
             _isGameOver = true;
         }
 
