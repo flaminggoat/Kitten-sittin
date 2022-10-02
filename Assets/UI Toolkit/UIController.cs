@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour
 {
     public Button startButton;
-    public Button optionsButton;
+    public Button fsButton;
 
 
     // Start is called before the first frame update
@@ -15,10 +15,17 @@ public class UIController : MonoBehaviour
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
         startButton = root.Q<Button>("start-button");
-        optionsButton = root.Q<Button>("options-button");
+        fsButton = root.Q<Button>("fs-button");
 
         startButton.clicked += StartButtonPressed;
         startButton.clicked += startButton.Blur;
+
+        fsButton.clicked += fsButtonPressed;
+        fsButton.clicked += fsButton.Blur;
+    }
+
+    void fsButtonPressed() {
+        Screen.fullScreen = !Screen.fullScreen;
     }
 
     void StartButtonPressed() {
