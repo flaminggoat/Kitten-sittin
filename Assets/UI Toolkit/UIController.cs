@@ -18,7 +18,7 @@ public class UIController : MonoBehaviour
         optionsButton = root.Q<Button>("options-button");
 
         startButton.clicked += StartButtonPressed;
-        
+        startButton.clicked += startButton.Blur;
     }
 
     void StartButtonPressed() {

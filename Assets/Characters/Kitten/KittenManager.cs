@@ -14,7 +14,6 @@ public class KittenManager : MonoBehaviour
     public uint deadKittens = 0;
 
     public GameOver gameOverScreen;
-
     public float hp;
     private float _maxHp;
     public float reduceLifeRate;
