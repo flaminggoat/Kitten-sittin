@@ -24,6 +24,18 @@ public class KittenManager : MonoBehaviour
 
     private float _secondsUntilNextKitten;
 
+    private List<string> _hungrySentences = new List<string>()
+    {
+        "You couldn't keep your kittens fed! :(",
+        "Your kittens needed food...",
+    };
+
+    private List<string> _diedSentences = new List<string>()
+    {
+        "Your kittens walked into the world before they were ready :(",
+        "You have no kittens left alive :(",
+    };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,8 +62,12 @@ public class KittenManager : MonoBehaviour
             _secondsUntilNextKitten = Random.Range(minSpawnIntervalSeconds, maxSpawnIntervalSeconds);
         }
 
-        if (hp <= 0 || initialNKittens == deadKittens) {
-            gameOverScreen.TriggerGameOver();
+        if (hp <= 0) {
+            var sentenceIndex =  Random.Range(0, _hungrySentences.Count);
+            gameOverScreen.TriggerGameOver(_hungrySentences[sentenceIndex]);
+        } else if (initialNKittens == deadKittens) {
+            var sentenceIndex =  Random.Range(0, _diedSentences.Count);
+            gameOverScreen.TriggerGameOver(_diedSentences[sentenceIndex]);
         }
     }
 

@@ -10,6 +10,13 @@ public class Drown : MonoBehaviour
     public GameOver gameOverScreen;
     public bool isLeaping = false;
 
+    private List<string> _drownSentences = new List<string>()
+    {
+        "Not even mother cats like water!",
+        "Remember, cats don't like water",
+        "That blue thing you stepped on, yeah, that was water :/",
+    };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +46,9 @@ public class Drown : MonoBehaviour
             if (m != null) {
                 Destroy(GetComponent<mother>());
 
-                gameOverScreen.TriggerGameOver();
+                // Trigger game over
+                var sentenceIndex =  Random.Range(0, _drownSentences.Count);
+                gameOverScreen.TriggerGameOver(_drownSentences[sentenceIndex]);
             }
 
             // Kill the kitten
