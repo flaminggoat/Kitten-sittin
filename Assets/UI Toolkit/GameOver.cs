@@ -43,10 +43,13 @@ public class GameOver : MonoBehaviour
     }
 
     public void TriggerGameOver(string reason) {
-        var label = _screen.rootVisualElement.Q<Label>("game-over-reason");
-        label.text = reason;
+        if (!_isGameOver) {
+            var label = _screen.rootVisualElement.Q<Label>("game-over-reason");
+            label.text = reason;
 
-        _screen.enabled = true;
-        _isGameOver = true;
+            _screen.enabled = true;
+            _isGameOver = true;
+        }
+
     }
 }
