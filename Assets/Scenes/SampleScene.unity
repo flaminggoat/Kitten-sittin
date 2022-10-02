@@ -862,13 +862,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4254308873251375582, guid: a18eab5a29eb6e348ab1aa9046f21f84, type: 3}
-      propertyPath: BypassListenerEffects
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1176475952347813796, guid: a18eab5a29eb6e348ab1aa9046f21f84, type: 3}
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 1567029845}
+    - target: {fileID: 4254308873251375582, guid: a18eab5a29eb6e348ab1aa9046f21f84, type: 3}
+      propertyPath: BypassListenerEffects
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a18eab5a29eb6e348ab1aa9046f21f84, type: 3}
