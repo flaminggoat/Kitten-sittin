@@ -14,11 +14,19 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Starting game over setup");
         _screen = GetComponent<UIDocument>();
+        if (_screen == null) {
+            Debug.Log("UIDocument component not found");
+        }
         _screen.enabled = false;
         
         _restartBtn = _screen.rootVisualElement.Q<Button>("restart-btn");
-        _restartBtn.clicked += RestartButtonPressed;
+        if (_restartBtn == null) {
+            Debug.Log("restart-btn component not found");
+        } else {
+            _restartBtn.clicked += RestartButtonPressed;
+        }
     }
 
     // Update is called once per frame
@@ -51,7 +59,9 @@ public class GameOver : MonoBehaviour
     public void TriggerGameOver(string reason) {
         if (!_isGameOver) {
             var label = _screen.rootVisualElement.Q<Label>("game-over-reason");
-            label.text = reason;
+            if (label != null) {
+                label.text = reason;
+            }
 
             _screen.enabled = true;
             _isGameOver = true;

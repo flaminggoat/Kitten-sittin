@@ -44,7 +44,7 @@ public class Drown : MonoBehaviour
             // Prevent any movement
             var m = GetComponent<mother>();
             if (m != null) {
-                Destroy(GetComponent<mother>());
+                Destroy(m);
 
                 // Trigger game over
                 var sentenceIndex =  Random.Range(0, _drownSentences.Count);
