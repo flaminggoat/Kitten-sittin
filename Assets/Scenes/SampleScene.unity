@@ -572,6 +572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 863642061}
   - component: {fileID: 863642060}
+  - component: {fileID: 863642062}
   m_Layer: 0
   m_Name: Global Light
   m_TagString: Untagged
@@ -673,6 +674,94 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &863642062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863642059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a2d1cd35e7c194f8f623534f04bcac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayCycle: 0
+  dayDurationSeconds: 10
+  nightLights:
+  - {fileID: 1663728043}
+  - {fileID: 1234333645}
+  dayIntensity:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.2
+      value: 0
+      inSlope: -0.025695631
+      outSlope: -0.025695631
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.7942265
+    - serializedVersion: 3
+      time: 0.1
+      value: 1
+      inSlope: 0.35294348
+      outSlope: 0.35294348
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.08673231
+    - serializedVersion: 3
+      time: 0.9
+      value: 1
+      inSlope: -0.30022177
+      outSlope: -0.30022177
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.084969185
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.2
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  dayLightColor:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.36078432, b: 0, a: 1}
+    key1: {r: 1, g: 0.81251305, b: 0.50980395, a: 1}
+    key2: {r: 1, g: 1, b: 1, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 4433
+    ctime1: 35466
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
 --- !u!1 &863797254
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +930,7 @@ GameObject:
   - component: {fileID: 1234333644}
   - component: {fileID: 1234333645}
   m_Layer: 0
-  m_Name: Light 2D
+  m_Name: Shed Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1065,6 +1154,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kittenManager: {fileID: 863797255}
+--- !u!114 &1663728043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2407358838357854290, guid: c767930e1c39cc3499d3115c79c9c00e, type: 3}
+  m_PrefabInstance: {fileID: 1825411984}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1825411984
 PrefabInstance:
   m_ObjectHideFlags: 0
