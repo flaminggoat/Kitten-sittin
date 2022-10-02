@@ -1,7 +1,7 @@
 .radial-progress {
     min-width: 26px;
     min-height: 20px;
-    --track-color: rgba(255, 255, 255, 0.5);
+    --track-color: rgba(255, 255, 255, 1);
     --progress-color: #fd9c31;
     --percentage-color: black;
     margin-left: 5px;
