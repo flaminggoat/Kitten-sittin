@@ -5,16 +5,18 @@
         <ui:VisualElement style="flex-grow: 2; flex-basis: auto; flex-shrink: 1; width: auto;" />
         <ui:VisualElement style="align-items: stretch; flex-grow: 1; padding-right: 15px;">
             <ui:GroupBox style="flex-direction: row;">
-                <ui:Label text="Age" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; height: 20px; width: 98px;" />
+                <ui:Label text="Age" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; height: 20px; width: 98px; -unity-font: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf?fileID=12800000&amp;guid=585188cdc4600544eb408bee749e4b3a&amp;type=3#ThaleahFat_TTF&apos;); font-size: 24px; -unity-font-definition: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF%20SDF.asset?fileID=11400000&amp;guid=4e74e2e1e5a4ff345ae709b4dbd5d975&amp;type=2#ThaleahFat_TTF SDF&apos;);" />
                 <ui:ProgressBar title=" " name="age-bar" tooltip="Health" high-value="100" class="age-bar" style="flex-basis: auto; max-width: none; min-width: auto; width: auto; flex-grow: 1; flex-shrink: 1; max-height: 50px; margin-right: 0; background-color: rgba(109, 173, 107, 0.54); scale: -1 1; padding-bottom: 0; margin-left: 0; margin-top: 0; margin-bottom: 0;" />
             </ui:GroupBox>
             <ui:GroupBox style="flex-direction: row;">
-                <ui:Label text="Food" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; height: 20px; width: 98px;" />
+                <ui:Label text="Food" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; height: 20px; width: 98px; -unity-font: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf?fileID=12800000&amp;guid=585188cdc4600544eb408bee749e4b3a&amp;type=3#ThaleahFat_TTF&apos;); font-size: 24px; -unity-font-definition: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF%20SDF.asset?fileID=11400000&amp;guid=4e74e2e1e5a4ff345ae709b4dbd5d975&amp;type=2#ThaleahFat_TTF SDF&apos;);" />
                 <ui:ProgressBar title=" " name="hp-bar" tooltip="Health" high-value="20" class="hp-bar" style="flex-basis: auto; max-width: none; min-width: auto; width: auto; flex-grow: 1; flex-shrink: 1; max-height: 50px; margin-right: 0; background-color: rgba(173, 107, 107, 0.54); scale: -1 1; padding-bottom: 0; margin-left: 0; margin-top: 0; margin-bottom: 0;" />
             </ui:GroupBox>
             <ui:GroupBox style="flex-direction: row-reverse;">
-                <MyUILibrary.RadialProgress name="kitten-counter" max="5" value="1" focusable="false" style="flex-shrink: 0; width: 100px; height: 100px; flex-direction: row; align-self: flex-end; padding-top: 0; margin-top: 10px;" />
-                <ui:Label text="Kittens" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; height: 117px; width: 81px;" />
+                <ui:VisualElement style="align-items: center;">
+                    <ui:Label text="Kittens" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; height: 20px; width: 81px; -unity-font: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf?fileID=12800000&amp;guid=585188cdc4600544eb408bee749e4b3a&amp;type=3#ThaleahFat_TTF&apos;); -unity-font-definition: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF%20SDF.asset?fileID=11400000&amp;guid=4e74e2e1e5a4ff345ae709b4dbd5d975&amp;type=2#ThaleahFat_TTF SDF&apos;); font-size: 24px; padding-right: 0;" />
+                    <MyUILibrary.RadialProgress name="kitten-counter" max="5" value="1" focusable="false" style="flex-shrink: 0; width: 100px; height: 100px; flex-direction: row; align-self: flex-end; padding-top: 0; margin-top: 0; -unity-font: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf?fileID=12800000&amp;guid=585188cdc4600544eb408bee749e4b3a&amp;type=3#ThaleahFat_TTF&apos;); -unity-font-definition: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF%20SDF.asset?fileID=11400000&amp;guid=4e74e2e1e5a4ff345ae709b4dbd5d975&amp;type=2#ThaleahFat_TTF SDF&apos;); font-size: 50px;" />
+                </ui:VisualElement>
             </ui:GroupBox>
         </ui:VisualElement>
     </ui:VisualElement>
